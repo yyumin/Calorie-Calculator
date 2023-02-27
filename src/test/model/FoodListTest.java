@@ -3,7 +3,7 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class FoodListTest {
 
@@ -32,12 +32,12 @@ public class FoodListTest {
 
     @Test
     public void testRemoveFood() {
+        assertFalse(testFoodList.removeFood("eggs"));
         testFoodList.addFood(food1);
         assertEquals(-100, testFoodList.getTotalDailyCalories());
-        testFoodList.removeFood("eggs");
+        assertTrue(testFoodList.removeFood("eggs"));
         assertEquals(0, testFoodList.getFoodListSize());
         assertEquals(0, testFoodList.getTotalDailyCalories());
-
     }
 
     @Test
