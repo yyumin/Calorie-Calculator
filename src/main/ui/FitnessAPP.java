@@ -89,27 +89,21 @@ public class FitnessAPP {
 
     public int calculateTotalEnergyExpenditure(User user) {
         int t = 0;
-        switch (user.getActiveLevel()) {
-            case "s":
-                t = (int) (calculateBMR(user) * 1.2);
-                System.out.println("Your activity factor is 1.2 and your Total Daily Energy Expenditure is: " + t);
-                break;
-            case "l":
-                t = (int) (calculateBMR(user) * 1.375);
-                System.out.println("your total daily energy expenditure is: " + t);
-                break;
-            case "m":
-                t = (int) (calculateBMR(user) * 1.55);
-                System.out.println("your total daily energy expenditure is: " + t);
-                break;
-            case "v":
-                t = (int) (calculateBMR(user) * 1.725);
-                System.out.println("your total daily energy expenditure is: " + t);
-                break;
-            case "e":
-                t = (int) (calculateBMR(user) * 1.9);
-                System.out.println("your total daily energy expenditure is: " + t);
-                break;
+        if ("s".equals(user.getActiveLevel())) {
+            t = (int) (calculateBMR(user) * 1.2);
+            System.out.println("Your activity factor is 1.2 and your Total Daily Energy Expenditure is: " + t);
+        } else if ("l".equals(user.getActiveLevel())) {
+            t = (int) (calculateBMR(user) * 1.375);
+            System.out.println("your total daily energy expenditure is: " + t);
+        } else if ("m".equals(user.getActiveLevel())) {
+            t = (int) (calculateBMR(user) * 1.55);
+            System.out.println("your total daily energy expenditure is: " + t);
+        } else if ("v".equals(user.getActiveLevel())) {
+            t = (int) (calculateBMR(user) * 1.725);
+            System.out.println("your total daily energy expenditure is: " + t);
+        } else if ("e".equals(user.getActiveLevel())) {
+            t = (int) (calculateBMR(user) * 1.9);
+            System.out.println("your total daily energy expenditure is: " + t);
         }
         return t;
     }
