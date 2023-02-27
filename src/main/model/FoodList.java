@@ -5,7 +5,7 @@ import java.util.ArrayList;
 // Represents a collection of food of today
 public class FoodList {
     private final ArrayList<FoodIntake> foodList;
-    private int originalCalories = 0;
+    private int totalDailyCalories = 0; //total daily calories of the client
 
     /*
      * EFFECTS:  constructs new food list with food inside
@@ -20,6 +20,7 @@ public class FoodList {
      */
     public void addFood(FoodIntake food) {
         foodList.add(food);
+        totalDailyCalories = totalDailyCalories - food.getCal();
     }
 
     /*
@@ -31,28 +32,13 @@ public class FoodList {
         for (FoodIntake food : foodList) {
             if (food.getName().equals(foodName)) {
                 foodList.remove(food);
-                originalCalories = originalCalories - food.getCal();
+                totalDailyCalories = totalDailyCalories + food.getCal();
                 return true;
             }
         }
         return false;
     }
 
-
-    /*
-     * REQUIRES: food list is not empty
-     * MODIFIES: this
-     * EFFECTS: if food list is empty, produce zero; if there is food inside the list, add and produce
-     *          the total calories of the food
-     */
-    public int totalCalories() {
-        if (foodList.size() != 0) {
-            for (FoodIntake food : foodList) {
-                originalCalories += food.getCal();
-            }
-        }
-        return originalCalories;
-    }
 
     public FoodIntake getFood(int index) {
         return foodList.get(index);
@@ -62,8 +48,8 @@ public class FoodList {
         return foodList.size();
     }
 
-    public int getOriginalCalories() {
-        return originalCalories;
+    public int getTotalDailyCalories() {
+        return totalDailyCalories;
     }
 
 }

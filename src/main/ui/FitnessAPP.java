@@ -10,6 +10,7 @@ public class FitnessAPP {
     private User user1;
     private FoodList foodList1;
     private Scanner input;
+    private int caloriesRemaining;
 
 
     public FitnessAPP() {
@@ -21,6 +22,7 @@ public class FitnessAPP {
         String command = null;
         user1 = createNewUser();
         foodList1 = new FoodList();
+
         printClientInfo();
         calculate();
 
@@ -123,11 +125,13 @@ public class FitnessAPP {
             calculate();
         } else if ("a".equals(command)) {
             addFood();
+            System.out.println("Your daily calories remaining is: " + caloriesRemaining);
         } else if ("r".equals(command)) {
             deleteFood();
+            System.out.println("Your daily calories remaining is: " + caloriesRemaining);
         } else if ("d".equals(command)) {
             printFoodList();
-            remainingCalories();
+            System.out.println("Your daily calories remaining is: " + caloriesRemaining);
         } else {
             System.out.println("Selection not valid...");
         }
@@ -136,6 +140,7 @@ public class FitnessAPP {
     private void addFood() {
         FoodIntake food1 = createFood();
         foodList1.addFood(food1);
+        caloriesRemaining = calculateTotalEnergyExpenditure(user1) + foodList1.getTotalDailyCalories();
     }
 
     private void deleteFood() {
@@ -144,7 +149,7 @@ public class FitnessAPP {
         System.out.println("Enter food name you wanna delete:");
         name = input.next();
         foodList1.removeFood(name);
-
+        caloriesRemaining = calculateTotalEnergyExpenditure(user1) + foodList1.getTotalDailyCalories();
     }
 
 
@@ -172,13 +177,6 @@ public class FitnessAPP {
             protein1 = input.nextInt();
         }
         return new FoodIntake(name1, cal1, carbs1, fat1, protein1);
-    }
-
-    public void remainingCalories() {
-        int dailyTotal = calculateTotalEnergyExpenditure(user1);
-        int listTotal = foodList1.totalCalories();
-        int caloriesRemaining = dailyTotal - listTotal;
-        System.out.println("Your daily calories remaining is: " + caloriesRemaining);
     }
 
     public void printFoodList() {

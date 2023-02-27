@@ -33,16 +33,16 @@ public class FoodListTest {
     @Test
     public void testRemoveFood() {
         testFoodList.addFood(food1);
-        assertEquals(0, testFoodList.getOriginalCalories());
+        assertEquals(-100, testFoodList.getTotalDailyCalories());
         testFoodList.removeFood("eggs");
         assertEquals(0, testFoodList.getFoodListSize());
-        assertEquals(-100, testFoodList.getOriginalCalories());
+        assertEquals(0, testFoodList.getTotalDailyCalories());
 
     }
 
     @Test
     public void testEmptyFoodListCalories() {
-        assertEquals(0, testFoodList.totalCalories());
+        assertEquals(0, testFoodList.getTotalDailyCalories());
     }
 
     @Test
@@ -50,7 +50,6 @@ public class FoodListTest {
         testFoodList.addFood(food1);
         testFoodList.addFood(food2);
         testFoodList.addFood(food3);
-        assertEquals(600, testFoodList.totalCalories());
-        assertEquals(600, testFoodList.getOriginalCalories());
+        assertEquals(-600, testFoodList.getTotalDailyCalories());
     }
 }
