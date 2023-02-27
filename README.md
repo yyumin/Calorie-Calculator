@@ -1,26 +1,25 @@
 # My Personal Project
 
 ## What will the application do?
-This program is a local single-player 2D side scrolling game. Player can control the protagonist, attempting 
-to move persistently to the right and between columns of barriers without hitting them. The game has different 
-levels, each with increasing difficulty. The player is assigned with a health span. Once the player hits the 
-barrier, he/she will lose some percentage of health. Once the health span is empty, the game is over. The game 
-will settle a final score of how many barriers the player 
-went through.
+This program is a calorie tracker. It is designed to help users track and manage their daily food intake
+and monitor their calorie consumption. The project is expected to provide a user-friendly interface that
+allows users to input their meals and track the number of calories consumed for each meal.
 
 ## Who will use it?
-**Anyone** who is interested.
+**Anyone** who wants to maintain a healthy diet and achieve their fitness goals.
 
 ## Why is this project of interest to you?
-I want to design a game that is intriguing, simple yet challenging. And the score feature can encourage a healthy 
-competition among players.
+There is a growing need for solutions that can help people make informed choices about their diet and
+maintain a healthy lifestyle. The food calorie tracker project is a step in that direction, and it has
+the potential to help people achieve their health goals and improve their overall well-being.
 
 ## User stories
-- As a player, I want to control the protagonist's vertical position.
-- As a player, I want to be able to add points to my total score.
-- As a player, I want to view my final score of a game.
-- As a player, I want to be able to save my state of the game when I quit the game.
-- As a player, I want to be able to resume my last state of the game when the application restarts.
+- As a user, I want to input my information into the program and get my total daily energy expenditure.
+- As a user, I want to be able to add food to my food bank.
+- As a user, I want to be able to remove food from my food list.
+- As a user, I want to view a list of my daily consumption of food.
+- As a user, I want to be able to calculate remaining calories that I can consume.
+
 
 
  
