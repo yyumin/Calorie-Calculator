@@ -126,7 +126,7 @@ public class FitnessAPP {
         } else if ("r".equals(command)) {
             deleteFood();
         } else if ("d".equals(command)) {
-            foodList1.displayFood();
+            printFoodList();
             remainingCalories();
         } else {
             System.out.println("Selection not valid...");
@@ -179,6 +179,16 @@ public class FitnessAPP {
         int listTotal = foodList1.totalCalories();
         int caloriesRemaining = dailyTotal - listTotal;
         System.out.println("Your daily calories remaining is: " + caloriesRemaining);
+    }
+
+    public void printFoodList() {
+        for (int num = 0; num < foodList1.getFoodListSize(); num++) {
+            System.out.println("Food: " + foodList1.getFood(num).getName());
+            System.out.println("Calories: " + foodList1.getFood(num).getCal());
+            System.out.println("Net Carbs: " + foodList1.getFood(num).getCarbs());
+            System.out.println("Fat: " + foodList1.getFood(num).getFat());
+            System.out.println("Protein: " + foodList1.getFood(num).getProtein());
+        }
     }
 
 }

@@ -38,14 +38,6 @@ public class FoodList {
         return false;
     }
 
-    /*
-     * EFFECTS: display all food information inside the food collection.
-     */
-    public void displayFood() {
-        for (FoodIntake food : foodList) {
-            food.print();
-        }
-    }
 
     /*
      * REQUIRES: food list is not empty

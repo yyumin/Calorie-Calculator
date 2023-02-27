@@ -21,16 +21,6 @@ public class FoodIntake {
         this.protein = protein;
     }
 
-    /*
-     * EFFECTS:  print out the information of food
-     */
-    public void print() {
-        System.out.println("Food: " + name);
-        System.out.println("Calories: " + cal);
-        System.out.println("Net Carbs: " + carbs);
-        System.out.println("Fat: " + fat);
-        System.out.println("Protein: " + protein);
-    }
 
     public int getCal() {
         return this.cal;
