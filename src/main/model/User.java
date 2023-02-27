@@ -35,16 +35,6 @@ public class User {
         return (int) (66.47 + (6.24 * bodyWeight) + (12.7 * height) - (6.755 * age));
     }
 
-    /*
-     * EFFECTS:  print out client's basic information
-     */
-    public void print() {
-        System.out.println("Age: " + age);
-        System.out.println("Weight: " + bodyWeight);
-        System.out.println("Height: " + height);
-        System.out.println("Gender: " + gender);
-    }
-
     public double getAge() {
         return age;
     }

@@ -21,7 +21,7 @@ public class FitnessAPP {
         String command = null;
         user1 = createNewUser();
         foodList1 = new FoodList();
-        user1.print();
+        printClientInfo();
         calculate();
 
 
@@ -119,7 +119,7 @@ public class FitnessAPP {
 
     private void processCommand(String command) {
         if ("c".equals(command)) {
-            user1.print();
+            printClientInfo();
             calculate();
         } else if ("a".equals(command)) {
             addFood();
@@ -189,6 +189,13 @@ public class FitnessAPP {
             System.out.println("Fat: " + foodList1.getFood(num).getFat());
             System.out.println("Protein: " + foodList1.getFood(num).getProtein());
         }
+    }
+
+    public void printClientInfo() {
+        System.out.println("Age: " + user1.getAge());
+        System.out.println("Weight: " + user1.getBodyWeight());
+        System.out.println("Height: " + user1.getHeight());
+        System.out.println("Gender: " + user1.getGender());
     }
 
 }
