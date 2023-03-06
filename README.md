@@ -18,7 +18,8 @@ the potential to help people achieve their health goals and improve their overal
 - As a user, I want to be able to add food to my food bank.
 - As a user, I want to be able to remove food from my food list.
 - As a user, I want to view a list of my daily consumption of food.
-- As a user, I want to be able to calculate remaining calories that I can consume.
+- As a user, I want to be able to save my daily consumed food to food bank.
+- As a user, when I start the application, I want to be given the option to load my daily consumed food from food bank.
 
 
 
