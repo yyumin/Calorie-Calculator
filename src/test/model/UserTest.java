@@ -11,11 +11,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UserTest {
     private User testUser1;
     private User testUser2;
+    private User testUser3;
+    private User testUser4;
+    private User testUser5;
+
 
     @BeforeEach
     void setup() {
         testUser1 = new User(26, 143.1, 63.2, FEMALE, M);
         testUser2 = new User(26, 143.1, 63.2, MALE, E);
+        testUser3 = new User(26, 143.1, 63.2, MALE, S);
+        testUser4 = new User(26, 143.1, 63.2, MALE, L);
+        testUser5 = new User(26, 143.1, 63.2, MALE, V);
     }
 
     @Test
@@ -47,6 +54,10 @@ public class UserTest {
         foodList.addFood(food2);
         foodList.addFood(food3);
         assertEquals(2250,testUser1.calculateTotalEnergyExpenditure());
+        assertEquals(3013,testUser2.calculateTotalEnergyExpenditure());
+        assertEquals(1903,testUser3.calculateTotalEnergyExpenditure());
+        assertEquals(2180,testUser4.calculateTotalEnergyExpenditure());
+        assertEquals(2735,testUser5.calculateTotalEnergyExpenditure());
     }
 
     @Test

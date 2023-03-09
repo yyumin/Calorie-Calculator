@@ -1,7 +1,6 @@
 package persistence;
 
 import model.FoodIntake;
-import model.FoodList;
 import model.User;
 
 
@@ -16,11 +15,12 @@ public class JsonTest {
         assertEquals(protein,foodIntake.getProtein());
     }
 
-    protected void checkUser(int age, int bodyWeight, int height, User.Gender g, User.ActiveLevel a, User user) {
+    protected void checkUser(double age, double bodyWeight, double height, User.Gender g, User.ActiveLevel a, User user) {
         assertEquals(age,user.getAge());
         assertEquals(bodyWeight,user.getBodyWeight());
         assertEquals(height,user.getHeight());
         assertEquals(g, user.getGender());
         assertEquals(a,user.getActiveLevel());
     }
+
 }
