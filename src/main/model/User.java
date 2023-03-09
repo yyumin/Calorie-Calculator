@@ -39,41 +39,44 @@ public class User implements Writable {
      * EFFECTS:  calculate client's metabolism based on their age, body weight, height and gender
      */
     public int calculateMetabolism() {
-        switch (gender) {
-            case FEMALE:
-                metabolism = (int) (655.1 + (4.35 * bodyWeight) + (4.7 * height) - (4.7 * age));
-                break;
-            case MALE:
-                metabolism = (int) (66.47 + (6.24 * bodyWeight) + (12.7 * height) - (6.755 * age));
-                break;
-            default:
-                metabolism = 0;
-                break;
+        try {
+            switch (gender) {
+                case FEMALE:
+                    metabolism = (int) (655.1 + (4.35 * bodyWeight) + (4.7 * height) - (4.7 * age));
+                    break;
+                case MALE:
+                    metabolism = (int) (66.47 + (6.24 * bodyWeight) + (12.7 * height) - (6.755 * age));
+                    break;
+            }
+        } catch (NullPointerException e) {
+            metabolism = 0;
         }
         return metabolism;
     }
 
+    @SuppressWarnings("methodlength")
     public int calculateTotalEnergyExpenditure() {
         calculateMetabolism();
-        switch (activeLevel) {
-            case S:
-                totalEnergyExpenditure = (int) (metabolism * 1.2);
-                break;
-            case L:
-                totalEnergyExpenditure = (int) (metabolism * 1.375);
-                break;
-            case M:
-                totalEnergyExpenditure = (int) (metabolism * 1.55);
-                break;
-            case V:
-                totalEnergyExpenditure = (int) (metabolism * 1.725);
-                break;
-            case E:
-                totalEnergyExpenditure = (int) (metabolism * 1.9);
-                break;
-            default:
-                totalEnergyExpenditure = 0;
-                break;
+        try {
+            switch (activeLevel) {
+                case S:
+                    totalEnergyExpenditure = (int) (metabolism * 1.2);
+                    break;
+                case L:
+                    totalEnergyExpenditure = (int) (metabolism * 1.375);
+                    break;
+                case M:
+                    totalEnergyExpenditure = (int) (metabolism * 1.55);
+                    break;
+                case V:
+                    totalEnergyExpenditure = (int) (metabolism * 1.725);
+                    break;
+                case E:
+                    totalEnergyExpenditure = (int) (metabolism * 1.9);
+                    break;
+            }
+        } catch (NullPointerException e) {
+            totalEnergyExpenditure = 0;
         }
         System.out.println("Your Total Daily Energy Expenditure is: " + totalEnergyExpenditure);
         return totalEnergyExpenditure;

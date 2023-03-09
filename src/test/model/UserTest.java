@@ -7,6 +7,7 @@ import static model.User.ActiveLevel.*;
 import static model.User.Gender.FEMALE;
 import static model.User.Gender.MALE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 public class UserTest {
     private User testUser1;
@@ -14,6 +15,8 @@ public class UserTest {
     private User testUser3;
     private User testUser4;
     private User testUser5;
+    private User testUser6;
+    private User testUser7;
 
 
     @BeforeEach
@@ -23,6 +26,9 @@ public class UserTest {
         testUser3 = new User(26, 143.1, 63.2, MALE, S);
         testUser4 = new User(26, 143.1, 63.2, MALE, L);
         testUser5 = new User(26, 143.1, 63.2, MALE, V);
+        testUser6 = new User(26, 143.1, 63.2, null, M);
+        testUser7 = new User(26, 143.1, 63.2, FEMALE, null);
+
     }
 
     @Test
@@ -45,6 +51,12 @@ public class UserTest {
     }
 
     @Test
+    void testCalculateMetabolismNull() {
+        assertEquals(0, testUser6.calculateMetabolism());
+    }
+
+
+    @Test
     void testCalculateTotalEnergyExpenditure() {
         FoodList foodList = new FoodList();
         FoodIntake food1 = new FoodIntake("eggs", 100, 10, 10, 10);
@@ -59,6 +71,19 @@ public class UserTest {
         assertEquals(2180,testUser4.calculateTotalEnergyExpenditure());
         assertEquals(2735,testUser5.calculateTotalEnergyExpenditure());
     }
+
+    @Test
+    void testCalculateTotalEnergyExpenditureNull() {
+        FoodList foodList = new FoodList();
+        FoodIntake food1 = new FoodIntake("eggs", 100, 10, 10, 10);
+        FoodIntake food2 = new FoodIntake("bread", 200, 20, 20, 20);
+        FoodIntake food3 = new FoodIntake("salmon", 300, 10, 10, 10);
+        foodList.addFood(food1);
+        foodList.addFood(food2);
+        foodList.addFood(food3);
+        assertEquals(0, testUser7.calculateTotalEnergyExpenditure());
+    }
+
 
     @Test
     void testCalculateCaloriesRemaining() {
