@@ -31,13 +31,28 @@ public class FoodListTest {
     }
 
     @Test
-    public void testRemoveFood() {
+    public void testRemoveFoodEmpty() {
         assertFalse(testFoodList.removeFood("eggs"));
+    }
+
+    @Test
+    public void testRemoveFirstFood() {
         testFoodList.addFood(food1);
         assertEquals(-100, testFoodList.getTotalDailyCalories());
         assertTrue(testFoodList.removeFood("eggs"));
         assertEquals(0, testFoodList.getFoodListSize());
         assertEquals(0, testFoodList.getTotalDailyCalories());
+    }
+
+    @Test
+    public void testRemoveNotFirstFood() {
+        testFoodList.addFood(food1);
+        testFoodList.addFood(food2);
+        assertEquals(-300, testFoodList.getTotalDailyCalories());
+        assertTrue(testFoodList.removeFood("bread"));
+        assertEquals(1, testFoodList.getFoodListSize());
+        assertEquals(-100, testFoodList.getTotalDailyCalories());
+
     }
 
     @Test

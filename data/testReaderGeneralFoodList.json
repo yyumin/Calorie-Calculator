@@ -1,0 +1,19 @@
+{
+  "foodList": [
+    {
+      "carbs": 10,
+      "protein": 10,
+      "name": "eggs",
+      "fat": 10,
+      "calories": 100
+    },
+    {
+      "carbs": 10,
+      "protein": 10,
+      "name": "banana",
+      "fat": 10,
+      "calories": 300
+    }
+  ],
+  "totalDailyCalories": -400
+}

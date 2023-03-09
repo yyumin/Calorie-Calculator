@@ -1,9 +1,13 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 // Represents a collection of food of today
-public class FoodList {
+public class FoodList implements Writable {
     private final ArrayList<FoodIntake> foodList;
     private int totalDailyCalories = 0; //total daily calories of the client
 
@@ -50,6 +54,23 @@ public class FoodList {
 
     public int getTotalDailyCalories() {
         return totalDailyCalories;
+    }
+
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("totalDailyCalories", getTotalDailyCalories());
+        json.put("foodList", foodListToJson());
+        return json;
+    }
+
+    private JSONArray foodListToJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (FoodIntake f : foodList) {
+            jsonArray.put(f.toJson());
+        }
+        return jsonArray;
     }
 
 }

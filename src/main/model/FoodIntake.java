@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 // Represents food having a name, calories, total carbs, total fat and total protein it contains.
-public class FoodIntake {
+public class FoodIntake implements Writable {
     private final String name;  //food name
     private final int cal;      //food calories
     private final int carbs;    //food carbs
@@ -42,6 +45,15 @@ public class FoodIntake {
         return this.protein;
     }
 
-
+    @Override
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("calories", cal);
+        json.put("carbs", carbs);
+        json.put("fat", fat);
+        json.put("protein", protein);
+        return json;
+    }
 }
 
