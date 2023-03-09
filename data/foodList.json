@@ -1,4 +1,19 @@
 {
-    "foodList": [],
-    "totalDailyCalories": 0
+    "foodList": [
+        {
+            "carbs": 1,
+            "protein": 1,
+            "name": "a",
+            "fat": 1,
+            "calories": 100
+        },
+        {
+            "carbs": 1,
+            "protein": 1,
+            "name": "b",
+            "fat": 1,
+            "calories": 300
+        }
+    ],
+    "totalDailyCalories": -400
 }

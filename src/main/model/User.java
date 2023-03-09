@@ -46,6 +46,9 @@ public class User implements Writable {
             case MALE:
                 metabolism = (int) (66.47 + (6.24 * bodyWeight) + (12.7 * height) - (6.755 * age));
                 break;
+            default:
+                metabolism = 0;
+                break;
         }
         return metabolism;
     }
@@ -67,6 +70,9 @@ public class User implements Writable {
                 break;
             case E:
                 totalEnergyExpenditure = (int) (metabolism * 1.9);
+                break;
+            default:
+                totalEnergyExpenditure = 0;
                 break;
         }
         System.out.println("Your Total Daily Energy Expenditure is: " + totalEnergyExpenditure);
