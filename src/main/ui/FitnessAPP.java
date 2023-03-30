@@ -50,8 +50,7 @@ public class FitnessAPP extends JFrame implements ActionListener {
         constructMainPanel();
     }
 
-    //EFFECTS: constructs main panel with buttons, "Create Personal Info", "Check Personal Info", "Add Food",
-    //         "Delete Food", "Display food", "Save data" and "Load data" and adds the buttons to the main
+    //EFFECTS: constructs main panel with buttons, and adds the buttons to the main
     //         action listener
     @SuppressWarnings("methodlength")
     private void constructMainPanel() {
@@ -116,7 +115,7 @@ public class FitnessAPP extends JFrame implements ActionListener {
         pack();
     }
 
-
+    //EFFECTS: creates current date
     private String logTime() {
         LocalDateTime date = LocalDateTime.now();
         String month = date.getMonth().name();
@@ -126,6 +125,7 @@ public class FitnessAPP extends JFrame implements ActionListener {
         return fullDate;
     }
 
+    //EFFECTS:
     private void deleteFood() {
         FoodRemoveFrame foodRemoveFrame = new FoodRemoveFrame(this);
         foodRemoveFrame.removeFood();
@@ -196,13 +196,14 @@ public class FitnessAPP extends JFrame implements ActionListener {
     }
 
     //MODIFIES: this
-    //EFFECTS: constructs User Information Creation frame and panel, prompts user to input basic
-    //information
+    //EFFECTS: constructs User Information Creation frame and panel, prompts user to input basic information
     private void runCreate() {
         UserCreateFrame userCreateFrame = new UserCreateFrame(this);
         userCreateFrame.runUserInfoFrame();
     }
 
+    //MODIFIES: this
+    //EFFECTS: constructs Food Creation frame and panel, prompts user to input food info
     private void addFood() {
         FoodCreateFrame foodCreateFrame = new FoodCreateFrame(this);
         foodCreateFrame.runFoodCreatFrame();
@@ -220,6 +221,7 @@ public class FitnessAPP extends JFrame implements ActionListener {
         return user1;
     }
 
+    // EFFECTS: processes button clicks and runs appropriate methods
     @SuppressWarnings("methodlength")
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Scanner;
 
+// represents the food removing window
 public class FoodRemoveFrame extends JFrame {
     private final JPanel foodRemovePanel;
     private final FitnessAPP fitnessAPP;
@@ -12,6 +13,7 @@ public class FoodRemoveFrame extends JFrame {
     private JTextField foodName;
     private JButton enterButton;
 
+    // EFFECTS: creates food removing window
     public FoodRemoveFrame(FitnessAPP fitnessAPP) {
         this.setName("Food Bank Display");
         this.setSize(400, 400);
@@ -29,6 +31,8 @@ public class FoodRemoveFrame extends JFrame {
         this.fitnessAPP = fitnessAPP;
     }
 
+
+    // EFFECTS: Create and set up the Food Remove window and delete a selected food from food bank
     public void removeFood() {
         nameLabel = new JLabel("Type in food name that you wanna remove:");
         foodRemovePanel.add(nameLabel);

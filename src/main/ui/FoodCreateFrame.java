@@ -24,7 +24,7 @@ public class FoodCreateFrame extends JFrame {
 
     private JButton enterButton;
 
-
+    // EFFECTS: creates new food creation window
     public FoodCreateFrame(FitnessAPP fitnessAPP) {
         this.setName("Food Intake");
         this.setSize(400, 600);
@@ -91,6 +91,7 @@ public class FoodCreateFrame extends JFrame {
         this.setVisible(true);
     }
 
+    // EFFECTS: add food into the food bank
     private void processFoodIntake() {
         String name = foodName.getText();
         int calories = Integer.parseInt(foodCalories.getText());

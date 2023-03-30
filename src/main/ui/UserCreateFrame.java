@@ -92,7 +92,7 @@ public class UserCreateFrame extends JFrame {
         this.setVisible(true);
     }
 
-    // EFFECTS:
+    // EFFECTS: constructs user info frame and panel, prompts user to enter basic info and instantiate User
     @SuppressWarnings("methodlength")
     private void processClientInfo() {
         String name = clientName.getText();

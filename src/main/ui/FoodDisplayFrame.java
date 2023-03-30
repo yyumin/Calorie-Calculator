@@ -13,6 +13,7 @@ public class FoodDisplayFrame extends JFrame {
     private final JLabel printLabel = new JLabel();
     private final JButton removeBottom = new JButton("Remove");
 
+    // EFFECTS: creates food bank display window
     public FoodDisplayFrame(FitnessAPP fitnessAPP) {
         this.setName("Food Bank Display");
         this.setSize(400, 400);
@@ -30,7 +31,7 @@ public class FoodDisplayFrame extends JFrame {
         this.fitnessAPP = fitnessAPP;
     }
 
-
+    // EFFECTS: print Food Bank
     public void displayFoodList() {
         printLabel.setText("Here is your food consumption list:");
         foodDisplayPanel.add(printLabel);

@@ -25,6 +25,7 @@ public class UserInfoFrame extends JFrame {
         this.fitnessAPP = fitnessAPP;
     }
 
+    // EFFECTS: creates user display window
     public void displayClientInfo() {
         JLabel userInfoBreakdown = new JLabel("Your personal information:");
         JLabel nameBreakdown = new JLabel("Name:" + getFitnessAPP().getUser().getName());
