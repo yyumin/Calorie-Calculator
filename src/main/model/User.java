@@ -5,6 +5,7 @@ import persistence.Writable;
 
 // Represent a user with their age, body weight, height, gender and activity level
 public class User implements Writable {
+    private String name;
     private double age;
     private double bodyWeight;
     private double height;
@@ -27,7 +28,8 @@ public class User implements Writable {
     /*
      * EFFECTS:  constructs new client information
      */
-    public User(double age1, double bodyweight1, double height1, Gender gender, ActiveLevel al) {
+    public User(String name,double age1, double bodyweight1, double height1, Gender gender, ActiveLevel al) {
+        this.name = name;
         this.age = age1;
         this.bodyWeight = bodyweight1;
         this.height = height1;
@@ -88,6 +90,18 @@ public class User implements Writable {
         return caloriesRemaining;
     }
 
+    public int getTotalEnergyExpenditure() {
+        return totalEnergyExpenditure;
+    }
+
+    public int getCaloriesRemaining() {
+        return caloriesRemaining;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public double getAge() {
         return age;
     }
@@ -100,7 +114,6 @@ public class User implements Writable {
         return height;
     }
 
-
     public Gender getGender() {
         return gender;
     }
@@ -112,6 +125,7 @@ public class User implements Writable {
     @Override
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
+        json.put("name", name);
         json.put("age", age);
         json.put("bodyWeight", bodyWeight);
         json.put("height", height);

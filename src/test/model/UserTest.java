@@ -9,6 +9,7 @@ import static model.User.Gender.MALE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+
 public class UserTest {
     private User testUser1;
     private User testUser2;
@@ -21,13 +22,13 @@ public class UserTest {
 
     @BeforeEach
     void setup() {
-        testUser1 = new User(26, 143.1, 63.2, FEMALE, M);
-        testUser2 = new User(26, 143.1, 63.2, MALE, E);
-        testUser3 = new User(26, 143.1, 63.2, MALE, S);
-        testUser4 = new User(26, 143.1, 63.2, MALE, L);
-        testUser5 = new User(26, 143.1, 63.2, MALE, V);
-        testUser6 = new User(26, 143.1, 63.2, null, M);
-        testUser7 = new User(26, 143.1, 63.2, FEMALE, null);
+        testUser1 = new User("Max", 26, 143.1, 63.2, FEMALE, M);
+        testUser2 = new User("Max",26, 143.1, 63.2, MALE, E);
+        testUser3 = new User("Max",26, 143.1, 63.2, MALE, S);
+        testUser4 = new User("Max",26, 143.1, 63.2, MALE, L);
+        testUser5 = new User("Max",26, 143.1, 63.2, MALE, V);
+        testUser6 = new User("Max",26, 143.1, 63.2, null, M);
+        testUser7 = new User("Max",26, 143.1, 63.2, FEMALE, null);
 
     }
 

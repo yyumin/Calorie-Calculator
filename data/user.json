@@ -1,7 +1,8 @@
 {
-    "gender": "FEMALE",
-    "bodyWeight": 153,
-    "activeLevel": "S",
-    "age": 26,
-    "height": 63
+    "gender": "MALE",
+    "name": "max",
+    "bodyWeight": 164,
+    "activeLevel": "V",
+    "age": 25,
+    "height": 75
 }

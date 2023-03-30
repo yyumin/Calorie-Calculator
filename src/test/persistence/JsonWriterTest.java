@@ -31,7 +31,7 @@ public class JsonWriterTest extends JsonTest {
     @Test
     void testWriterInvaildUserFile() {
         try {
-            User user = new User(26, 143.1, 63.2, FEMALE, M);
+            User user = new User("MAX",26, 143.1, 63.2, FEMALE, M);
             JsonWriter writer = new JsonWriter("./data/my\0illegal:fileName.json");
             writer.open();
             fail("IOException was expected");
@@ -82,7 +82,7 @@ public class JsonWriterTest extends JsonTest {
     @Test
     void testWriterGeneralUser() {
         try {
-            User user = new User(26, 143.1, 63.2, FEMALE, M);
+            User user = new User("Max",26, 143.1, 63.2, FEMALE, M);
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralUser.json");
             writer.open();
             writer.writeUser(user);

@@ -1,19 +1,10 @@
 {
-    "foodList": [
-        {
-            "carbs": 1,
-            "protein": 1,
-            "name": "a",
-            "fat": 1,
-            "calories": 100
-        },
-        {
-            "carbs": 1,
-            "protein": 1,
-            "name": "b",
-            "fat": 1,
-            "calories": 300
-        }
-    ],
-    "totalDailyCalories": -400
+    "foodList": [{
+        "carbs": 12,
+        "protein": 23,
+        "name": "egg",
+        "fat": 42,
+        "calories": 1230
+    }],
+    "totalDailyCalories": -1230
 }

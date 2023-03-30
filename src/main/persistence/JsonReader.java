@@ -49,12 +49,13 @@ public class JsonReader {
     //MODIFIES: User
     //EFFECTS: parses user information from JSON object and returns it
     private User parseUser(JSONObject jsonObject) {
+        String name = jsonObject.getString("name");
         double age = jsonObject.optDouble("age");
         double bodyWeight = jsonObject.getDouble("bodyWeight");
         double height = jsonObject.getDouble("height");
         User.Gender gender = User.Gender.valueOf(jsonObject.getString("gender"));
         User.ActiveLevel activeLevel = User.ActiveLevel.valueOf(jsonObject.getString("activeLevel"));
-        User user = new User(age, bodyWeight, height, gender, activeLevel);
+        User user = new User(name, age, bodyWeight, height, gender, activeLevel);
         return user;
     }
 
