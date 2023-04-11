@@ -8,7 +8,7 @@ import java.awt.*;
 // represents the new food creation popup window
 public class FoodCreateFrame extends JFrame {
     private final JPanel foodCreatePanel;
-    private final FitnessAPP fitnessAPP;
+    private final FitnessAppGUI fitnessAppGUI;
 
     private JLabel nameLabel;
     private JLabel caloriesLabel;
@@ -25,7 +25,7 @@ public class FoodCreateFrame extends JFrame {
     private JButton enterButton;
 
     // EFFECTS: creates new food creation window
-    public FoodCreateFrame(FitnessAPP fitnessAPP) {
+    public FoodCreateFrame(FitnessAppGUI fitnessAppGUI) {
         this.setName("Food Intake");
         this.setSize(400, 600);
         this.setBackground(Color.WHITE);
@@ -39,7 +39,7 @@ public class FoodCreateFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(true);
 
-        this.fitnessAPP = fitnessAPP;
+        this.fitnessAppGUI = fitnessAppGUI;
     }
 
     // MODIFIES: this
@@ -99,10 +99,10 @@ public class FoodCreateFrame extends JFrame {
         int fat = Integer.parseInt(foodFat.getText());
         int protein = Integer.parseInt(foodProtein.getText());
         FoodIntake food = new FoodIntake(name,calories,carb,fat,protein);
-        fitnessAPP.getFoodList().addFood(food);
+        fitnessAppGUI.getFoodList().addFood(food);
     }
 
-    public FitnessAPP getFitnessAPP() {
-        return fitnessAPP;
+    public FitnessAppGUI getFitnessAPP() {
+        return fitnessAppGUI;
     }
 }

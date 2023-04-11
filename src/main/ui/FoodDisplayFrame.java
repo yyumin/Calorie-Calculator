@@ -7,14 +7,14 @@ import java.awt.*;
 public class FoodDisplayFrame extends JFrame {
     private final JPanel foodDisplayPanel;
 
-    private final FitnessAPP fitnessAPP;
+    private final FitnessAppGUI fitnessAppGUI;
 
     private JLabel foodIntakeLabel;
     private final JLabel printLabel = new JLabel();
     private final JButton removeBottom = new JButton("Remove");
 
     // EFFECTS: creates food bank display window
-    public FoodDisplayFrame(FitnessAPP fitnessAPP) {
+    public FoodDisplayFrame(FitnessAppGUI fitnessAppGUI) {
         this.setName("Food Bank Display");
         this.setSize(400, 400);
         this.setBackground(Color.WHITE);
@@ -28,7 +28,7 @@ public class FoodDisplayFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(true);
 
-        this.fitnessAPP = fitnessAPP;
+        this.fitnessAppGUI = fitnessAppGUI;
     }
 
     // EFFECTS: print Food Bank
@@ -52,7 +52,7 @@ public class FoodDisplayFrame extends JFrame {
 
     }
 
-    public FitnessAPP getFitnessAPP() {
-        return fitnessAPP;
+    public FitnessAppGUI getFitnessAPP() {
+        return fitnessAppGUI;
     }
 }

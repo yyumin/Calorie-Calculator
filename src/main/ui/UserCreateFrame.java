@@ -13,7 +13,7 @@ import static model.User.Gender.MALE;
 public class UserCreateFrame extends JFrame {
 
     private final JPanel userCreatePanel;
-    private final FitnessAPP fitnessAPP;
+    private final FitnessAppGUI fitnessAppGUI;
 
     private JLabel welcomeLabel;
     private JLabel ageLabel;
@@ -32,7 +32,7 @@ public class UserCreateFrame extends JFrame {
     private JButton enterButton;
 
     // EFFECTS: creates new user creation window
-    public UserCreateFrame(FitnessAPP fitnessAPP) {
+    public UserCreateFrame(FitnessAppGUI fitnessAppGUI) {
         this.setName("User Info Collection");
         this.setSize(400, 650);
         this.setLocationRelativeTo(null); //position the frame in the center of the screen
@@ -44,7 +44,7 @@ public class UserCreateFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(true);
 
-        this.fitnessAPP = fitnessAPP;
+        this.fitnessAppGUI = fitnessAppGUI;
     }
 
     // MODIFIES: this
@@ -134,8 +134,8 @@ public class UserCreateFrame extends JFrame {
         } else {
             activeLevel = E;
         }
-        fitnessAPP.setUser(new User(name, age, bodyWeight, height, gender, activeLevel));
-        fitnessAPP.getUser().calculateTotalEnergyExpenditure();
+        fitnessAppGUI.setUser(new User(name, age, bodyWeight, height, gender, activeLevel));
+        fitnessAppGUI.getUser().calculateTotalEnergyExpenditure();
         displayClientInfo();
     }
 
@@ -195,8 +195,8 @@ public class UserCreateFrame extends JFrame {
         userCreatePanel.add(totalEnergyExpenditureBreakdown);
     }
 
-    public FitnessAPP getFitnessAPP() {
-        return fitnessAPP;
+    public FitnessAppGUI getFitnessAPP() {
+        return fitnessAppGUI;
     }
 
 }

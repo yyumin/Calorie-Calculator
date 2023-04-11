@@ -2,19 +2,18 @@ package ui;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Scanner;
 
 // represents the food removing window
 public class FoodRemoveFrame extends JFrame {
     private final JPanel foodRemovePanel;
-    private final FitnessAPP fitnessAPP;
+    private final FitnessAppGUI fitnessAppGUI;
 
     private JLabel nameLabel;
     private JTextField foodName;
     private JButton enterButton;
 
     // EFFECTS: creates food removing window
-    public FoodRemoveFrame(FitnessAPP fitnessAPP) {
+    public FoodRemoveFrame(FitnessAppGUI fitnessAppGUI) {
         this.setName("Food Bank Display");
         this.setSize(400, 400);
         this.setBackground(Color.WHITE);
@@ -28,7 +27,7 @@ public class FoodRemoveFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(true);
 
-        this.fitnessAPP = fitnessAPP;
+        this.fitnessAppGUI = fitnessAppGUI;
     }
 
 
@@ -54,7 +53,7 @@ public class FoodRemoveFrame extends JFrame {
 
     }
 
-    public FitnessAPP getFitnessAPP() {
-        return fitnessAPP;
+    public FitnessAppGUI getFitnessAPP() {
+        return fitnessAppGUI;
     }
 }

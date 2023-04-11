@@ -1,6 +1,5 @@
 package ui;
 
-import model.FoodIntake;
 import model.FoodList;
 import model.User;
 import persistence.JsonReader;
@@ -15,9 +14,11 @@ import java.awt.event.WindowEvent;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Scanner;
 
-public class FitnessAPP extends JFrame implements ActionListener {
+import static javax.swing.JOptionPane.*;
+import static javax.swing.JOptionPane.NO_OPTION;
+
+public class FitnessAppGUI extends JFrame implements ActionListener {
     private static final String JSON_STORE_USER = "./data/user.json";
     private static final String JSON_STORE = "./data/foodList.json";
 
@@ -33,13 +34,41 @@ public class FitnessAPP extends JFrame implements ActionListener {
     private FoodList foodList1;
     private User user1;
 
+    /**
+     * WindowAdapter to handle windowClosing.
+     */
+    private WindowAdapter windowClosing = new WindowAdapter() {
+        /**
+         * Asks the user to confirm before closing the app and autosaving.
+         *
+         * @param we the WindowEvent
+         */
+        @Override
+        public void windowClosing(WindowEvent we) {
+            int option = showConfirmDialog(
+                    null, "Are you sure you want to close FitnessApp?",
+                    "Confirm Close", YES_NO_OPTION, WARNING_MESSAGE
+            );
+            if (option == NO_OPTION) { // if user selects no, abort close
+                return;
+            }
+            // if user selects yes, app closes
+            for (model.Event e : model.EventLog.getInstance()) {
+                System.out.println(e);
+            }
+            System.exit(0);
+        }
+    };
+
+
     // EFFECTS: run application
-    public FitnessAPP() throws FileNotFoundException {
+    public FitnessAppGUI() throws FileNotFoundException {
         super("Fitness APP");
 
         this.setSize(500,500);
         this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.addWindowListener(windowClosing);
         this.setLocationRelativeTo(null);
 
         jsonWriterUserInfo = new JsonWriter(JSON_STORE_USER);

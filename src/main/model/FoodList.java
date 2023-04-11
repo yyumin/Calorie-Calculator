@@ -24,6 +24,7 @@ public class FoodList implements Writable {
      */
     public void addFood(FoodIntake food) {
         foodList.add(food);
+        EventLog.getInstance().logEvent(new Event(food.getName() + " added to the Food Bank"));
         totalDailyCalories = totalDailyCalories - food.getCal();
     }
 
@@ -36,6 +37,7 @@ public class FoodList implements Writable {
         for (FoodIntake food : foodList) {
             if (food.getName().equals(foodName)) {
                 foodList.remove(food);
+                EventLog.getInstance().logEvent(new Event(foodName + " removed from the Food Bank"));
                 totalDailyCalories = totalDailyCalories + food.getCal();
                 return true;
             }

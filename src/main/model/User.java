@@ -80,13 +80,15 @@ public class User implements Writable {
         } catch (NullPointerException e) {
             totalEnergyExpenditure = 0;
         }
-        System.out.println("Your Total Daily Energy Expenditure is: " + totalEnergyExpenditure);
+        //System.out.println("Your Total Daily Energy Expenditure is: " + totalEnergyExpenditure);
+        EventLog.getInstance().logEvent(new Event("Calculated user's total energy expenditure: "
+                + Integer.toString(totalEnergyExpenditure)));
         return totalEnergyExpenditure;
     }
 
     public int calculateCaloriesRemaining(FoodList foodList) {
         caloriesRemaining = calculateTotalEnergyExpenditure() + foodList.getTotalDailyCalories();
-        System.out.println("Your daily calories remaining is: " + caloriesRemaining);
+        //System.out.println("Your daily calories remaining is: " + caloriesRemaining);
         return caloriesRemaining;
     }
 

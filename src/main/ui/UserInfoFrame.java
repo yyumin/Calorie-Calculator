@@ -6,9 +6,9 @@ import java.awt.*;
 // represents the user info popup window
 public class UserInfoFrame extends JFrame {
     private final JPanel userInfoPanel;
-    private final FitnessAPP fitnessAPP;
+    private final FitnessAppGUI fitnessAppGUI;
 
-    public UserInfoFrame(FitnessAPP fitnessAPP) {
+    public UserInfoFrame(FitnessAppGUI fitnessAppGUI) {
         this.setName("User Info");
         this.setSize(400, 400);
         this.setBackground(Color.WHITE);
@@ -22,7 +22,7 @@ public class UserInfoFrame extends JFrame {
         this.setVisible(true);
         this.setResizable(true);
 
-        this.fitnessAPP = fitnessAPP;
+        this.fitnessAppGUI = fitnessAppGUI;
     }
 
     // EFFECTS: creates user display window
@@ -49,7 +49,7 @@ public class UserInfoFrame extends JFrame {
         userInfoPanel.add(totalEnergyExpenditureBreakdown);
     }
 
-    public FitnessAPP getFitnessAPP() {
-        return fitnessAPP;
+    public FitnessAppGUI getFitnessAPP() {
+        return fitnessAppGUI;
     }
 }

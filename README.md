@@ -21,6 +21,34 @@ the potential to help people achieve their health goals and improve their overal
 - As a user, I want to be able to save my daily consumed food to food bank.
 - As a user, when I start the application, I want to be given the option to load my daily consumed food from food bank.
 
+## Phase 4: Event Logging and Design Reflection
 
+### Task 2: Event Log Sample
 
- 
+ ```
+Tue Apr 11 14:00:40 PDT 2023
+Calculated user's total energy expenditure: 2024
+Tue Apr 11 14:00:59 PDT 2023
+vanilla latte added to the Food Bank
+Tue Apr 11 14:01:29 PDT 2023
+shrimp dumplings added to the Food Bank
+Tue Apr 11 14:01:31 PDT 2023
+Calculated user's total energy expenditure: 2024
+Tue Apr 11 14:01:38 PDT 2023
+vanilla latte removed from the Food Bank
+Tue Apr 11 14:01:40 PDT 2023
+Calculated user's total energy expenditure: 2024
+```
+
+### Task 3: Design Reflection
+
+#### UML Diagram
+
+![UML Diagram](UML_Design_Diagram.png)
+
+The diagram follows a tree-like structure with
+associations generally pointing in one direction.
+There are no interfaces and abstract classes in the program.
+The coupling is loose and the cohesion is high
+for the most part since the program is relatively small,
+though there are still many things that could be improved. 
