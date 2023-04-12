@@ -26,29 +26,33 @@ the potential to help people achieve their health goals and improve their overal
 ### Task 2: Event Log Sample
 
  ```
-Tue Apr 11 14:00:40 PDT 2023
-Calculated user's total energy expenditure: 2024
-Tue Apr 11 14:00:59 PDT 2023
-vanilla latte added to the Food Bank
-Tue Apr 11 14:01:29 PDT 2023
-shrimp dumplings added to the Food Bank
-Tue Apr 11 14:01:31 PDT 2023
-Calculated user's total energy expenditure: 2024
-Tue Apr 11 14:01:38 PDT 2023
-vanilla latte removed from the Food Bank
-Tue Apr 11 14:01:40 PDT 2023
-Calculated user's total energy expenditure: 2024
+Wed Apr 12 12:59:39 PDT 2023
+Vanilla latte added to the Food Bank
+Wed Apr 12 12:59:43 PDT 2023
+Calculated user's total remaining calories: 1813
+Wed Apr 12 12:59:58 PDT 2023
+cheesecake added to the Food Bank
+Wed Apr 12 13:00:00 PDT 2023
+Calculated user's total remaining calories: 1463
+Wed Apr 12 13:00:07 PDT 2023
+cheesecake removed from the Food Bank
+Wed Apr 12 13:00:08 PDT 2023
+Calculated user's total remaining calories: 1813
 ```
 
 ### Task 3: Design Reflection
 
 #### UML Diagram
 
-![UML Diagram](UML_Design_Diagram.png)
+![UML Diagram](UML_Design_Diagram.jpg)
 
 The diagram follows a tree-like structure with
 associations generally pointing in one direction.
 There are no interfaces and abstract classes in the program.
-The coupling is loose and the cohesion is high
-for the most part since the program is relatively small,
-though there are still many things that could be improved. 
+
+#### Refactoring Possibilities
+
+In my opinion, what would benefit this program the most
+is to, instead of having JFrame for every button/function, it would be more
+convenient for user to display everything in the same main frame.
+That'd make the user experience a lot better. 

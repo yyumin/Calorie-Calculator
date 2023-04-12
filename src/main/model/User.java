@@ -81,14 +81,14 @@ public class User implements Writable {
             totalEnergyExpenditure = 0;
         }
         //System.out.println("Your Total Daily Energy Expenditure is: " + totalEnergyExpenditure);
-        EventLog.getInstance().logEvent(new Event("Calculated user's total energy expenditure: "
-                + Integer.toString(totalEnergyExpenditure)));
         return totalEnergyExpenditure;
     }
 
     public int calculateCaloriesRemaining(FoodList foodList) {
         caloriesRemaining = calculateTotalEnergyExpenditure() + foodList.getTotalDailyCalories();
         //System.out.println("Your daily calories remaining is: " + caloriesRemaining);
+        EventLog.getInstance().logEvent(new Event("Calculated user's total remaining calories: "
+                + Integer.toString(caloriesRemaining)));
         return caloriesRemaining;
     }
 
